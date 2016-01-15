@@ -63,7 +63,7 @@ class aws-ec2-tools(
     alias   => 'unzip_api_tools',
     path    => [ '/usr/local/bin/','/sbin/','/usr/bin' ],
     user    => 'root',
-    cwd     => '/root/',
+    cwd     => '/tmp/',
     creates => "/tmp/${ec2_pkg_name}",
     require => [File["/home/ec2"],Package['unzip']],
   }
