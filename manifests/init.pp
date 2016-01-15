@@ -4,14 +4,13 @@
 #
 # === Parameters
 #
-# [*s3cmd*]
-#   Boolean.  Whether or not the s3cmd package should be installed
-#   Default: true
-#
 # [*ec2_tools_version*]
 #   String. Controls the version of the ec2-api-tools to be installed
 #   Defaults to 1.7.3.0
 #
+# [*source_server*]
+#   String url.  The url to where the package (zip) can be found without trailing /
+#   Default: true
 #
 # === Examples
 #
@@ -24,7 +23,7 @@
 #
 class aws-ec2-tools(
   $ec2_tools_version  = '1.7.3.0',
-  $source_server      = 'http://s3.amazonaws.com/ec2-downloads/',
+  $source_server      = 'http://s3.amazonaws.com/ec2-downloads',
 ) {
 
   include java
