@@ -69,8 +69,8 @@ class aws-ec2-tools(
   }
 
   exec { "mv tools/bin":
-    command => "mv /tmp/${ec2_pkg_name}/bin /home/ec2/bin && \
-                mv /tmp/${ec2_pkg_name}/lib /home/ec2/lib",
+    command => "mv /tmp/${ec2_pkg_name}/bin/* /home/ec2/bin/ && \
+                mv /tmp/${ec2_pkg_name}/lib/* /home/ec2/lib/",
     path    => [ '/usr/local/bin/','/sbin/','/usr/bin' ],
     require => Exec['unzip_api_tools'],
   }
