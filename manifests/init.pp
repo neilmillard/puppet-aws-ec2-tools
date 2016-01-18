@@ -79,6 +79,7 @@ class awsec2tools(
     command => "mv /tmp/${ec2_pkg_name}/bin/* /home/ec2/bin/ && \
                 mv /tmp/${ec2_pkg_name}/lib/* /home/ec2/lib/",
     provider => 'shell',
+    creates => '/home/ec2/bin/ec2-cmd',
     require => Exec['unzip_api_tools'],
   }
 
