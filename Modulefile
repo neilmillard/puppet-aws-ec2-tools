@@ -1,0 +1,8 @@
+name 'puppet-aws-ec2-tools'
+version '0.0.1'
+source 'git@github.com:neilmillard-msm/puppet-aws-ec2-tools.git'
+author 'Neil Millard'
+license 'MIT'
+summary 'Puppet Module to install AWS EC2 Tools'
+description 'Puppet Module to install AWS EC2 Tools'
+project_page 'https://github.com/neilmillard/puppet-aws-ec2-tools'
