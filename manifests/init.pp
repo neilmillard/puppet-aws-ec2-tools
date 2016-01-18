@@ -10,7 +10,11 @@
 #
 # [*source_server*]
 #   String url.  The url to where the package (zip) can be found without trailing /
-#   Default: true
+#   Default: http://s3.amazon.com/ec2-downloads
+#
+# [*manage_javehome*]
+#   Boolean . If true, a profile/java file will be created to ensure JAVA_HOME env var
+#   Default: false
 #
 # === Examples
 #
@@ -21,20 +25,23 @@
 #
 # * Neil Millard <mailto:neil@neilmillard.com>
 #
-class aws-ec2-tools(
+class awsec2tools(
   $ec2_tools_version  = '1.7.3.0',
   $source_server      = 'http://s3.amazonaws.com/ec2-downloads',
+  $manage_javahome    = false,
 ) {
 
   include java
 
-  # Configure JAVA_HOME globlly.
-  file { '/etc/profile.d/java.sh':
-    ensure  => file,
-    owner   => root,
-    group   => root,
-    mode    => 644,
-    content => "export JAVA_HOME=/usr/java/default",
+  if ($manage_javahome == true){
+    # Configure JAVA_HOME globlly.
+    file { '/etc/profile.d/java.sh':
+      ensure  => file,
+      owner   => root,
+      group   => root,
+      mode    => 644,
+      content => "export JAVA_HOME=/usr/java/default",
+    }
   }
 
   include wget
@@ -71,7 +78,8 @@ class aws-ec2-tools(
   exec { "mv tools/bin":
     command => "mv /tmp/${ec2_pkg_name}/bin/* /home/ec2/bin/ && \
                 mv /tmp/${ec2_pkg_name}/lib/* /home/ec2/lib/",
-    path    => [ '/usr/local/bin/','/sbin/','/usr/bin' ],
+    provider => 'shell',
+    creates => '/home/ec2/bin/ec2-cmd',
     require => Exec['unzip_api_tools'],
   }
 

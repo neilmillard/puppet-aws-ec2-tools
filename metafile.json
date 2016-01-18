@@ -1,10 +1,10 @@
 {
-  "name": "puppet-aws-ec2-tools",
-  "version": "1.0.0",
+  "name": "puppet-awsec2tools",
+  "version": "0.0.1",
   "author": "Neil Millard",
   "license": "MIT",
   "summary": "Puppet Module to install AWS EC2 Tools",
-  "source": "https://github.com/neilmillard/puppet-aws-ec2-tools",
+  "source": "git@github.com:neilmillard-msm/puppet-aws-ec2-tools.git",
   "issues_url": "https://github.com/neilmillard/puppet-aws-ec2-tools/issues",
   "tags": ["aws","ec2","java"],
   "operatingsystem_support": [
@@ -15,7 +15,6 @@
   ],
   "dependencies": [
     { "name": "puppetlabs/stdlib", "version_requirement": ">= 3.2.0 < 5.0.0" },
-    { "name": "maestrodev/wget", "version_requirement": ">=1.5.6"},
-    { "name": "puppetlabs/java", "version_requirement": ">=1.4.3"}
+    { "name": "maestrodev/wget", "version_requirement": ">=1.5.6"}
   ]
 }
