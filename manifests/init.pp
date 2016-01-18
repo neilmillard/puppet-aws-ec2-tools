@@ -21,7 +21,7 @@
 #
 # * Neil Millard <mailto:neil@neilmillard.com>
 #
-class aws-ec2-tools(
+class awsec2tools(
   $ec2_tools_version  = '1.7.3.0',
   $source_server      = 'http://s3.amazonaws.com/ec2-downloads',
 ) {

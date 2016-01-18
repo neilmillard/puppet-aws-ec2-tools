@@ -1,5 +1,5 @@
 {
-  "name": "puppet-aws-ec2-tools",
+  "name": "puppet-awsec2tools",
   "version": "0.0.1",
   "author": "Neil Millard",
   "license": "MIT",

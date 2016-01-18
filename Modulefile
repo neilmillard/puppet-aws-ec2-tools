@@ -1,4 +1,4 @@
-name 'puppet-aws-ec2-tools'
+name 'puppet-awsec2tools'
 version '0.0.1'
 source 'git@github.com:neilmillard-msm/puppet-aws-ec2-tools.git'
 author 'Neil Millard'
